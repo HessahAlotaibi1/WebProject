@@ -1,0 +1,389 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="maincascade.css">
+    <style>
+
+        :root {
+            --element-background: #f8f8f8;
+            --element-border-color: #ccc;
+            --vision-border-color: #bec0c1;
+        }
+
+        .dark-theme {
+            --element-background: #333333;
+            --element-border-color: #666666;
+            --vision-border-color: #888888;
+        }
+ 
+        .offers {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+      
+        .offer {
+            border: 1px solid var(--element-border-color);
+            padding: 10px;
+            width: 30%;
+            margin-bottom: 20px; 
+            background-color: var(--element-background);
+            text-align: center;
+        }
+        
+        .categories {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .category {
+            width: 30%;
+            text-align: center;
+            padding: 10px;
+            border: 1px solid var(--element-border-color);
+            background-color: var(--element-background);
+        }
+           
+        .reviews {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            
+        }
+
+        .review {
+            position: relative; 
+            border: 1px solid var(--element-border-color);
+            padding: 10px;
+            width: 30%;
+            text-align: center;
+            background-color: var(--element-background);
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .review-details {
+            display: none; 
+            position: absolute;
+            top: 100%; 
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            padding: 10px;
+            background-color: white;
+            color: black; 
+            border: 1px solid #ccc;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+    
+        .review .review-details {
+            color: black;
+            background-color: white; 
+        }
+
+
+
+        .review:hover .review-details {
+            display: block; 
+        }
+
+        .vision {
+            border: 5px dotted var(--vision-border-color);
+            padding: 5px;
+            width:100%;
+            background-color: var(--element-background);
+            text-align: center
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+            
+        /* for phone */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .offers .offer {
+                width: 100%;
+            }
+
+            .reviews .review {
+                width: 100%;
+            }
+
+            .vision {
+                flex-direction: column;
+                text-align: center;
+            }
+            .vision img {
+                width: 100%;
+                height: auto;
+                margin-top: 20px;
+            }
+        }
+
+          /* for tablet */
+        @media (max-width: 1024px) {
+            .offers .offer, .reviews .review {
+                width: 48%; /* Two items per row */
+            }
+        }
+
+        /* for nav */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                padding: 0;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+
+
+    </style>
+</head>
+
+
+
+<body>
+
+    <script src="MainJs.js"></script>
+
+<header>
+    <div class="logo">
+    
+        <img src="images/OpenBazaar-b.png" alt="Open Bazaar Logo" width="100">
+        <h1>OpenBazaar</h1>
+    </div>
+    <button onclick="toggleTheme()" id="themeToggleButton">
+        <img src="images/moon-outline.svg" alt="Toggle Theme Icon" id="themeIcon">
+    </button>
+    <div class="search">
+        <input type="text" placeholder="Search">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="KitchenPage.html">Kitchen</a></li>
+            <li><a href="ToysPage.html">Toys & Games</a></li>
+            <li><a href="ElectronicsPage.html">Electronics</a></li>
+            <li><a href="Seller's_dashboard.html">Seller Dashboard</a></li>
+            <li><a href="userprofile.html">User Page</a></li>
+            <li><a href="cart.html">Cart</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div id="weekStartDate"></div> 
+
+<div class="breadcrumb">
+    <p>--&gt; <a href="home.html">Home</a></p>
+</div>
+
+    <div  class="vision" style="display: flex; align-items: center; justify-content: space-between; padding: 20px;">
+        
+        <div style="flex: 1; ">
+            <p style="font-weight: bold; font-size: 24px; text-align: center;">Our Vision</p>
+            <p style="font-size: 18px; line-height: 1.6; text-align: center;">
+                We aim to create a one-stop platform that brings all your needs into one place.<br>
+                Whether you're searching for the latest trends, quality products, or trusted services, 
+                we have it all.<br> Our vision is to connect people with the things they love in the easiest 
+                and most convenient way.
+            </p>
+        </div>
+        
+        <div>
+            <img src="images/vision.jpg" alt="vision image" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);" width="400" height="200">
+        </div>
+    </div>
+
+
+
+
+<section>
+    <h2>Offers</h2>
+    <div class="offers" id="offersContainer">
+        <div class="offer">
+            <img src="images/coock.jpeg" alt="Offer 1 : cookware with 30% discount " width="400" height="400">
+            <h3>Cookware Set</h3>
+            <p>Best Non-Stick Cookware: Top Picks For Effortless And Healthy Cooking Everyday with 30% discount</p>
+            <p><del style="color: red;">100 SR</del> 70 SR</p>
+            <button>View Details</button>
+        </div>
+        <div class="offer">
+            <img src="images/phonewithheadphone.jpg" alt="Offer 2 : phone with headphone" width="400" height="400">
+            <h3>Xperia Phone</h3>
+            <p>Xperia 5II is now available for pre-order. Act fast to get Sony headphones worth 700 SR!</p>
+            <p><del style="color: red;">5000 SR</del> 3500 SR</p>
+            <button>View Details</button>
+        </div>
+        <div class="offer">
+            <img src="images/tvisolat.jpg" alt="Offer 3 : buy hubbi and get 3 months NETFLIX account" width="380" height="400">
+            <h3>Hubbl</h3>
+            <p>Get 3 months of Netflix and Shahid when you buy the new Hubbl device .</p>
+            <p><del style="color: red;">500 SR</del> 300 SR</p>
+            <button>View Details</button>
+        </div>
+
+       
+        <div class="offer extra-offer" style="display: none;">
+            <img src="images/640-cute-japanese-dolls.jpg" alt="Offer 4: two dolls combo offer" width="400" height="400">
+            <h3>Combo Dolls</h3>
+            <p>Combo Japanese Dolls for kids (Size: 40cm) Cute mini wooden Dolls .</p>
+            <p><del style="color: red;">50 SR</del> 35 SR</p>
+            <button>View Details</button>
+        </div>
+        <div class="offer extra-offer" style="display: none;">
+            <img src="images/woodenspon.jpg" alt="Offer 5: wooden kitchen set with 50% discount" width="400" height="400">
+            <h3>Wooden Set</h3>
+            <p>Wooden Kitchen Utensil Set with 50% discount its a big offer .</p>
+            <p><del style="color: red;">100 SR</del> 50 SR</p>
+            <button>View Details</button>
+        </div>
+        <div class="offer extra-offer" style="display: none;">
+            <img src="images/blend.jpg" alt="Offer 6: blender with a gift offer" width="380" height="400">
+            <h3>2-in-1 Blender</h3>
+            <p>Buy the strongest 2-in-1 blender and get a gift if you buy two</p>
+            <p><del style="color: red;">800 SR</del> 500 SR</p>
+            <button>View Details</button>
+        </div>
+    </div>
+
+  
+    <button id="showMoreBtn" onclick="showMoreOffers()">Show More Offers</button>
+</section>
+<section>
+    <h2>Categories</h2>
+    <div class="categories">
+        <div class="category">
+          <a href="" > <h3>Toys</h3></a>
+            <img src="images/toyes.png" alt="Category 1" width="300" height="400">
+        </div>
+        <div class="category">
+            <a href="" > <h3>Kitchen</h3></a>
+            <img src="images/kitchencat.png" alt="Category 2" width="300" height="400">
+        </div>
+        <div class="category">
+            <a href="" ><h3>Electronics</h3></a>
+            <img src="images/eleccat.png" alt="Category 3" width="300" height="300" style="margin-top: 10%;">
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <h2>Reviews</h2>
+    <div class="reviews">
+        <div class="review">
+            <p>Product: Small Car</p>
+            <img src="images/child.jpeg" alt="Category 1" width="170" height="170">
+            <p>Rating: ★★★★☆</p>
+            <div class="review-details">
+                <p>Name: Samar</p>
+                <p>Product: Small Car</p>
+                <p>Rating: 4 stars</p>
+                <p>Feedback: "My child loves it!"</p>
+            </div>
+        </div>
+        
+        <div class="review">
+            <p>Product: Wooden Spoons</p>
+            <img src="images/woodreview.jpg" alt="Category 1" width="150" height="150">
+            <p>Rating: ★★★☆☆</p>
+            <div class="review-details">
+                <p>Name: Halah</p>
+                <p>Product: Wooden Spoons</p>
+                <p>Rating: 3 stars</p>
+                <p>Feedback: "Good quality, useful for cooking."</p>
+            </div>
+        </div>
+        
+        <div class="review">
+            <p>Product: Ipexal 24 Ultra</p>
+            <img src="images/phonereview.jpg" alt="Category 1" width="200" height="150">
+            <p>Rating: ★★★★★</p>
+            <div class="review-details">
+                <p>Name: Khalid</p>
+                <p>Product: Ipexal 24 Ultra</p>
+                <p>Rating: 5 stars</p>
+                <p>Feedback: "Amazing camera and AI features!"</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-left">
+        <p>&copy; OpenBazaar. All rights reserved.</p>
+    </div>
+    <div class="footer-center">
+        <div class="footer-logo">
+            <img src="images/OpenBazaar-b.png" alt="Open Bazaar Logo" width="100">
+        </div>
+    </div>
+    <div class="footer-right">
+        <a href="mailto:OpenBazaar@gmail.com">Email: OpenBazaar@gmail.com</a>
+        <p>Phone: 0569395763</p>
+        <div class="social-icons">
+            <a href="#"><img src="images/logo-instagram.svg" alt="Instagram Logo" width="40"></a>
+            <a href="#"><img src="images/logo-facebook.svg"  alt="Facebook Logo" width="40"></a>
+        </div>
+    </div>
+</footer>
+
+</body>
+<script>function showMoreOffers() {
+   
+    var extraOffers = document.querySelectorAll(".extra-offer");
+    extraOffers.forEach(function(offer) {
+        offer.style.display = "block"; 
+    });
+
+ 
+    document.getElementById("showMoreBtn").style.display = "none";
+}
+function displayWeekStartDate() {
+    let today = new Date();
+    let dayOfWeek = today.getDay();
+    
+  
+    let sunday = new Date(today);
+    sunday.setDate(today.getDate() - dayOfWeek); 
+    
+    
+    let options = { year: 'numeric', month: 'long', day: 'numeric' };
+    let formattedDate = sunday.toLocaleDateString('en-US', options);
+    document.getElementById('weekStartDate').textContent = 
+        "This week's start date is: " + formattedDate;
+}
+
+
+window.onload = displayWeekStartDate;
+
+
+document.querySelectorAll('.review').forEach(review => {
+    review.addEventListener('mouseenter', () => {
+        review.querySelector('.review-details').style.display = 'block';
+    });
+    review.addEventListener('mouseleave', () => {
+        review.querySelector('.review-details').style.display = 'none';
+    });
+});
+
+</script>
+
+</html>

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="maincascade.css">
+        <style>
+
+
+    :root {
+                    
+                    --text-color-primary: #000000; 
+                    --text-color-secondary: #333333; 
+                    --text-color-tertiary: #555555; 
+                    --card-background: #ffffff; 
+                    --card-border-color: #d6d5c9; 
+                    --text-color-primary: #000000; 
+                  
+                }
+
+                .dark-theme {
+                    --text-color-primary: #f5f5f5; 
+                    --text-color-secondary: #bbbbbb; 
+                    --text-color-tertiary: #999999; 
+                    --card-background: #1e1e1e; 
+                    --card-border-color: #444444; 
+                    --text-color-primary: #f5f5f5;
+                  
+                    
+                }
+                div.item1,
+                div.item2,
+                div.item3,
+                div.item4 {
+                    background-color: var(--card-background);
+                    border: 4px var(--card-border-color);
+                    border-radius: 5px;
+                    color: var(--text-color-primary);
+                    width: 250px;
+                }
+
+                .p1 {
+                    color: var(--text-color-primary);
+                }
+
+                .p2 {
+                    color: var(--text-color-secondary);
+                }
+
+                .p3 {
+                    color: var(--text-color-tertiary);
+                }
+
+
+
+            .head1{
+                margin: 0.5em;
+            }
+          .head1 select{
+            position: absolute;
+            right: 0;
+            margin-top: 0.8em;
+          }
+          h1{
+            display:inline;
+            margin-top: 0.8em;
+          }
+          div.Subcategory{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            gap: 0.1em;
+            margin-bottom: 0.8em;
+          }
+          .sub1 img{
+            border: 5px outset #d6d5c9;
+          }
+          .sub2 img{
+            border: 5px outset #d6d5c9;
+          }
+          .sub1 span{
+            display: block;
+            text-align: center;
+            border: 5px outset #d6d5c9;
+          }
+          .sub2 span{
+            display: block;
+            text-align: center;
+            border: 5px outset #d6d5c9;
+          }
+          .sub3 span{
+            display: block;
+            text-align: center;
+            border: 5px outset #d6d5c9;
+          }
+          .sub3 img{
+            border: 5px outset #d6d5c9;
+          }
+          div.items{
+            display: flex;
+            margin-bottom: 50px;
+            justify-content: space-around;
+            margin-top: 80px;
+          }
+        
+          .item1 p{
+            font-size: small;
+          }
+          
+          .item2 p{
+            font-size: small;
+          }
+         
+          .item3 p{
+            font-size: small;
+          }
+          
+          .item4 p{
+            font-size: small;
+          }
+          .p3{
+            display:inline;
+          }
+          .rating{
+            display:inline;
+          }
+          .add-to-cart{
+            display: block;
+          }
+          .item1 .p2{
+            font-size:15px;
+            text-align: center;
+          }
+          .item1 .p1{
+            font-size:25px;
+            text-align: center;
+          }
+         .item1 img{
+          width: 125px;
+          height: 125px;
+          position: relative;
+          top: 0;
+          left:55px;
+          } 
+         .item1 .p3{
+            display:inline;    
+          }
+          .item1 .rating{
+            display:inline;
+            position: relative;
+            left:50px;
+          }
+          .item1 .add-to-cart{
+            width: 150px;
+            height: 30px;
+            position: relative;
+            top: 2px;
+            left: 50px;
+            border-radius: 5px;
+            cursor: pointer;
+          }
+          .rating .empty{
+            color: #ccc;
+          }
+          .rating .filled{
+            color: #ffd700;
+          }
+          .item2 .p2{
+            font-size:15px;
+            text-align: center;
+          }
+          .item2 .p1{
+            font-size:25px;
+            text-align: center;
+          }
+         .item2 img{
+          width: 125px;
+          height: 125px;
+          position: relative;
+          top: 0;
+          left:55px;
+           } 
+         .item2 .p3{
+            display:inline;  
+            font-size:15px;
+          }
+          .item2 .rating{
+            display:inline;
+            position: relative;
+            left:60px;
+          }
+          .item2 .add-to-cart{
+            width: 150px;
+            height: 30px;
+            position: relative;
+            top: 0px;
+            left: 50px;
+            border-radius: 5px;
+            cursor: pointer;
+          }
+          .item3 .p2{
+            font-size:15px;
+            text-align: center;
+          }
+          .item3 .p1{
+            font-size:25px;
+            text-align: center;
+          }
+         .item3 img{
+          width: 125px;
+          height: 125px;
+          position: relative;
+          top: 0;
+          left:55px;
+          } 
+         .item3 .p3{
+            display:inline;
+            font-size:15px;
+          }
+          .item3 .rating{
+            display:inline;
+            position: relative;
+            left:50px;
+          }
+          .item3 .add-to-cart{
+            width: 150px;
+            height: 30px;
+            position: relative;
+            top: 0px;
+            left: 50px;
+            border-radius: 5px;
+            cursor: pointer;
+          }
+          .item3 .rating{
+            display:inline;
+            position: relative;
+            left:50px;
+          }
+          .item4 .p2{
+            font-size:15px;
+            text-align: center;
+          }
+          .item4 .p1{
+            font-size:25px;
+            text-align: center;
+          }
+          .item4 .p3{
+            font-size:15px;
+          }
+         .item4 img{
+          width: 125px;
+          height: 125px;
+          position: relative;
+          top: 0;
+          left:55px;
+         } 
+         .item4 .p3{
+            display:inline;
+          }
+          .item4 .rating{
+            display:inline;
+            position: relative;
+            left:60px;
+          }
+          .item4 .add-to-cart{
+            width: 150px;
+            height: 30px;
+            position: relative;
+            top: 2px;
+            bottom: 0px;
+            left: 50px;
+            border-radius: 5px;
+            cursor: pointer;
+          }
+          .sub1{
+            border: 2px solid #ccc;
+          }
+          .sub2{
+            border: 2px solid #ccc;
+          }
+          .sub3{
+            border: 2px solid #ccc;
+          }
+
+          .head1 {
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            margin: 0.5em;
+          }
+
+          .head1 h2 {
+              margin: 0; 
+          }
+
+          .head1 select {
+              margin: 0; 
+              padding: 0.5em; 
+              border: 1px solid #ccc; 
+              border-radius: 5px; 
+          }
+                  
+        </style>
+        <title>Kitchen</title>
+    </head>
+    <body>
+      <script src="MainJs.js"></script>
+        <header>
+            <div class="logo">
+                <img src="images/OpenBazaar-b.png" alt="Open Bazaar Logo" >
+                <h1>OpenBazaar</h1>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Search">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="KitchenPage.html">Kitchen</a></li>
+                    <li><a href="ToysPage.html">Toys & Games</a></li>
+                    <li><a href="ElectronicsPage.html">Electronics</a></li>
+                    <li><a href="evaluatee.html">Seller Dashboard</a></li>
+                    <li><a href="userprofile.html">User Page</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="breadcrumb">
+            <p><a href="home.html">Home</a>--&gt; <a href="KitchenPage.html">Kitchen</a></p>
+            
+        </div>
+                    <section>
+                      <div class="head1">
+                        <h2>Kitchen</h2>
+                        <select name="sorting" onchange="sortProducts(event)">
+                            <optgroup label="lowest rate - highest rate">
+                                <option>Price Low to High</option>
+                                <option>Price High to Low</option>
+                            </optgroup>
+                            <optgroup label="ASC - DES">
+                                <option>By Name(A to Z)</option>
+                                <option>By Name(Z to A)</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    
+                <!--here I used felxbox-->
+                <div class="Subcategory">
+                  
+                    <div class="sub1">
+                    <img src="images/k1.jpeg" alt="Utensils">
+                    <a href="#"><span>Utensils</span></a>
+                    </div>
+                    
+                    <div class="sub2">
+                        <img src="images/k2.jpeg" alt="Serving Utensils">
+                        <a href="#"><span>Serving Utensils</span></a>
+                    </div>
+                    
+                    <div class="sub3">
+                        <img src="images/k3.jpeg" alt="Pots and Pans">
+                        <a href="#"><span>Pots and Pans</span></a>
+                    </div>
+                    
+                </div>
+                <div class="items">
+                    <div class="item1">
+                        <img src="images/knives.jpg" alt="KnifeSets" width="90">
+                        <p class="p1">Knife Set</p>
+                        <p class="p2">Amorston 2 Pieces Knife Sets for Kitchen with Block, Dishwasher Safe Kitchen
+                             Knife Set with Built in Sharpener Block, German Stainless Steel Knife Block Set, Black</p>
+                             <br>
+                        <p class="p3">price:30 SAR</p>
+                        <div class="rating">
+                            <span class="empty">★</span>
+                            <span class="empty">★</span>
+                            <span class="filled">★</span>
+                            <span class="filled">★</span>
+                            <span class="filled">★</span>
+                        </div>
+                        <button 
+                        class="add-to-cart" 
+                        data-name="Knife Set" 
+                        data-price="30" 
+                        data-image="images/knives.jpg" 
+                        onclick="addToCart(this)">
+                            Add to cart 
+                        </button>
+                    </div>
+                    <div class="item2">
+                        <img src="images/cutlery.jpg" alt="cutlery" width="90">
+                        <p class="p1">Kitchen Utensils Set</p>
+                        <p class="p2">Monoptilon Set, 3-Piece Cutlery Set, Mirror Polished Utensil Set (Silver).</p>
+                        <br><br><br><br>
+                        <p class="p3">price:37 SAR</p>
+                        <div class="rating">
+                            <span class="empty">★</span>
+                            <span class="filled">★</span>
+                            <span class="filled">★</span>
+                            <span class="filled">★</span>
+                            <span class="filled">★</span>
+                        </div>
+                        <button
+                         class="add-to-cart" 
+                        data-name="Kitchen Utensils Set" 
+                        data-price="37" 
+                        data-image="images/cutlery.jpg" 
+                        onclick="addToCart(this)">
+                            Add to cart 
+                        </button>
+                    </div>
+                    <div class="item3">
+                        <img src="images/pot.jpg" alt="Pot " width="90">
+                        <p class="p1">Pot </p>
+                        <p class="p2">Soup Cooker, Silver 5.4L Hot Pot for Soup for Kitchen.</p>
+                             <br><br><br><br>
+                        <p class="p3">price:76 SAR</p>
+                        <div class="rating">
+                            <span class="empty">★</span>
+                            <span class="empty">★</span>
+                            <span class="filled">★</span>
+                            <span class="filled">★</span>
+                            <span class="filled">★</span>
+                        </div>
+                        <button 
+                        class="add-to-cart" 
+                        data-name="Pot" 
+                        data-price="76" 
+                        data-image="images/pot.jpg" 
+                        onclick="addToCart(this)">
+                            Add to cart 
+                        </button>
+                    </div>
+                    <div class="item4">
+                        <img src="images/dish-5079769_640.jpg" alt="Dish" width="90">
+                        <p class="p1">Dishes</p>
+                        <p class="p2">6-Piece Dinnerware Set| Lightweight, Durable, BPA-Free| Dishwasher Safe Dish Set for Indoor & Outdoor Use</p>
+                        <br><br>
+                        <p class="p3">price:120 SAR</p>
+                        <div class="rating">
+                            <span class="empty">★</span>
+                            <span class="empty">★</span>
+                            <span class="filled">★</span>
+                            <span class="filled">★</span>
+                            <span class="filled">★</span>
+                        </div>
+                        <button 
+                        class="add-to-cart" 
+                        data-name="Dishes" 
+                        data-price="120" 
+                        data-image="images/dish-5079769_640.jpg" 
+                        onclick="addToCart(this)">
+                            Add to cart 
+                        </button>
+                    </div>
+                    </div>
+            </section>
+        <footer>
+            <div class="footer-left">
+                <p>&copy; OpenBazaar. All rights reserved.</p>
+            </div>
+            <div class="footer-center">
+                <div class="footer-logo">
+                    <img src="images/OpenBazaar-b.png" alt="OpenBazaar Logo" width="100">
+                </div>
+            </div>
+            <div class="footer-right">
+                <a href="mailto:OpenBazaar@gmail.com">Email: OpenBazaar@gmail.com</a>
+                <p>Phone: 0569395763</p>
+                <div class="social-icons">
+                    <a href="#"><img src="images/logo-instagram.svg" alt="Instagram Logo" width="40"></a>
+                    <a href="#"><img src="images/logo-facebook.svg" alt="Facebook Logo" width="40"></a>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
