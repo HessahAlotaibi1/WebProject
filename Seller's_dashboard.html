@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+	<title>Seller's dashboard </title>
+	
+	<link rel="stylesheet" href="maincascade.css">
+	<style>
+
+		:root {
+			--product-background: #f4f4f4;
+			--product-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+			--product-description-color: #555;
+		}
+
+		.dark-theme {
+			--product-background: #444444; 
+			--product-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3); 
+			--product-description-color: #ccc;
+		}
+
+			
+		.user {
+			padding:20px;}
+		
+		.products-list{
+			padding:20px;}
+			
+		.product-list h2 {
+			margin-bottom: 20px;}
+		
+		.link{
+			border:2px groove;
+			padding:7px;
+			margin:5px;
+			background-color: lightgrey;}
+			
+		.products-container {
+			display: flex;
+			overflow: scroll;
+			border: solid black; 
+			margin: 2em; }
+		
+			.product {
+				min-width: 300px;
+				max-width: 300px;
+				margin-right: 20px;
+				background-color: var(--product-background);
+				padding: 15px;
+				border-radius: 5px;
+				box-shadow: var(--product-box-shadow);
+				text-align: center;
+			}
+
+			
+		.product-image{
+			width: 100px;
+			height: auto;
+			border-radius: 5px; }
+			
+		.product-des{
+			font-size: 14px;
+			color: var(--product-description-color);
+			margin-top: 10px;}
+				
+	</style>	
+</head>
+
+<body>
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const productsContainer = document.querySelector(".products-container");
+
+        const products = JSON.parse(localStorage.getItem("products")) || [];
+
+        products.forEach(product => {
+            const productElement = document.createElement("div");
+            productElement.classList.add("product");
+            productElement.innerHTML = `
+                <img src="${product.image}" alt="${product.name}" class="product-image">
+                <h4 class="product-name">${product.name}</h4>
+                <p class="product-des">${product.description}</p>
+                <p class="product-price">Price: $${product.price}</p>
+                <p class="product-quantity">Quantity: ${product.quantity}</p>
+                <p class="product-category">Category: ${product.category}</p>
+            `;
+            productsContainer.appendChild(productElement);
+        });
+    });
+</script>
+	
+	
+    <header>
+        <div class="logo">
+            <img src="images/OpenBazaar-b.png" alt="Open Bazaar Logo" width="100">
+			<h1>OpenBazaar</h1>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Search">
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="KitchenPage.html">Kitchen</a></li>
+                <li><a href="ToysPage.html">Toys & Games</a></li>
+                <li><a href="ElectronicsPage.html">Electronics</a></li>
+                <li><a href="Seller's_dashboard.html">Seller Dashboard</a></li>
+                <li><a href="userprofile.html">User Page</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>		
+	</header>
+
+    <div class="breadcrumb">
+        <p><a href="home.html">Home</a> --&gt; <a href="Seller's_dashboard.html">Seller Dashboard</a> </p>
+    </div>
+	
+	<div class="user">
+		<img src="images/user.png" alt="profile picture" width="80" height="80" style="float:left;" >
+		<br>
+		<h2>Username</h2>
+		 
+	</div>
+	
+	<div class="products-list">
+		<h2>Your Product</h2>
+		<br> <br>
+		<a href="NewProduc.html" class="link">Add new product </a>
+		<a href="Manage_offers.html" class="link">Make/Delete offers </a>
+		
+		<div class="products-container">
+			<!--
+			<div class="product">
+				<img src="images/headphones.jpg" alt="Headphones" class="product-image">
+				<h4 class="product-name">Headphones</h4>
+				<p class="product-des">HeadPhones Wireless Bluetooth On-Ear with Mic for Phone Call, white.</p>
+			</div>
+			
+			<div class="product">
+				<img src="images/cutlery.jpg" alt="cutlery"  class="product-image">
+				<h4 class="product-name">Kitchen Utensils Set</h4>
+				<p class="product-des">Monoptilon Set, 3-Piece Cutlery Set, Mirror Polished Utensil Set (Silver).</p>
+			</div>
+			
+			<div class="product">
+				<img src="images/pot.jpg" alt="Pot" class="product-image">
+				<h4 class="product-name">Pot</h4>
+				<p class="product-des">Soup Cooker, Silver 5.4L Hot Pot for Soup for Kitchen</p>
+			</div>
+			
+			<div class="product">
+				<img src="images/batmanlego.jpg" alt="Amorston 15 Pieces Knife Sets" class="product-image">
+				<h4 class="product-name">Batman Lego</h4>
+				<p class="product-des">Logo 3-Inch Batman Collector Toy Figure, Highly Articulated for Boys Girls</p>
+			</div>
+			
+			<div class="product">
+				<img src="images/projector.jpg" alt="Polocsh Projector"  class="product-image">
+				<h4 class="product-name">Polocsh Projector, Native 1080P Projector</h4>
+				<p class="product-des">Native 1080p clear vision projector from polcsh</p>
+			</div>
+			
+			<div class="product">
+				<img src="images/RedCar.jpg" alt="Red Car"  class="product-image">
+				<h4 class="product-name">Red Car</h4>
+				<p class="product-des">Small red car for kids, without remote control.</p>
+			</div>
+			-->
+		</div>
+	</div>
+	
+	<footer>
+    <div class="footer-left">
+        <p>&copy; OpenBazaar. All rights reserved.</p>
+    </div>
+	
+    <div class="footer-center">
+        <div class="footer-logo">
+            <img src="images/OpenBazaar-b.png" alt="Open Bazaar Logo" width="100">
+        </div>
+    </div>
+	
+    <div class="footer-right">
+        <a href="mailto:OpenBazaar@gmail.com">Email: OpenBazaar@gmail.com</a>
+        <p>Phone: 0569395763</p>
+        <div class="social-icons">
+            <a href="#"><img src="images/logo-instagram.svg" alt="Instagram Logo" width="40"></a>
+            <a href="#"><img src="images/logo-facebook.svg" alt="Facebook Logo" width="40"></a>
+        </div>
+		
+    </div>
+    </footer>
+
+</body>	
+</html>	
